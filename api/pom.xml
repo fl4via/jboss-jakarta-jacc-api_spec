@@ -35,7 +35,7 @@
         these permissions.
     </description>
     <inceptionYear>2013</inceptionYear>
-    <url>https://github.com/eclipse-ee4j/jacc</url>
+    <url>https://github.com/jboss/jboss-jakarta-jacc-api_spec</url>
     
     <properties>
         <non.final>false</non.final>
@@ -98,9 +98,9 @@
     </mailingLists>
     
     <scm>
-        <connection>scm:git:ssh://git@github.com/eclipse-ee4j/jacc.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/eclipse-ee4j/jacc.git</developerConnection>
-        <url>https://github.com/eclipse-ee4j/jacc</url>
+        <connection>scm:git:ssh://git@github.com:jboss/jboss-jakarta-jacc-api_spec.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:jboss/jboss-jakarta-jacc-api_spec.git</developerConnection>
+        <url>https://github.com/jboss/jboss-jakarta-jacc-api_spec</url>
     </scm>
 
     <dependencies>
