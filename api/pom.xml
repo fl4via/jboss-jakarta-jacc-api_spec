@@ -41,6 +41,7 @@
         <non.final>false</non.final>
         <extension.name>javax.security.jacc</extension.name>
         <spec.version>1.5</spec.version>
+        <bundle.symbolicName>org.jboss.spec.javax.security.jacc.jboss-jacc-api_${spec.version}_spec</bundle.symbolicName>
         <findbugs.version>2.4.0</findbugs.version>
         <findbugs.skip>false</findbugs.skip>
         <findbugs.exclude>exclude-common.xml</findbugs.exclude>
@@ -65,8 +66,8 @@
     </contributors>
 
     <organization>
-        <name>Oracle Corporation</name>
-        <url>http://www.oracle.com</url>
+        <name>JBoss by Red Hat</name>
+        <url>https://github.com/jboss/jboss-jakarta-jacc-api_spec</url>
     </organization>
 
     <licenses>
@@ -204,10 +205,15 @@
                     <supportedProjectTypes>
                         <supportedProjectType>jar</supportedProjectType>
                     </supportedProjectTypes>
+                    <archive>
+                        <manifest>
+                            <addDefaultSpecificationEntries>false</addDefaultSpecificationEntries>
+                        </manifest>
+                    </archive>
                     <instructions>
                         <Automatic-Module-Name>java.security.jacc</Automatic-Module-Name>
-                        <Bundle-Version>${spec.bundle.version}</Bundle-Version>
-                        <Bundle-SymbolicName>${spec.bundle.symbolic-name}</Bundle-SymbolicName>
+                        <Bundle-Version>${project.version}</Bundle-Version>
+                        <Bundle-SymbolicName>${bundle.symbolicName}</Bundle-SymbolicName>
                         <Extension-Name>${spec.extension.name}</Extension-Name>
                         <Implementation-Version>${spec.implementation.version}</Implementation-Version>
                         <Specification-Version>${spec.specification.version}</Specification-Version>
@@ -215,9 +221,12 @@
                             Jakarta Authorization ${spec.version} Specification
                         </Bundle-Description>
                         <Specification-Vendor>Oracle Corporation</Specification-Vendor>
+                        <Specification-Version>${spec.version}</Specification-Version>
                         <Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
                         <Implementation-Vendor-Id>org.glassfish</Implementation-Vendor-Id>
-                        <Export-Package>javax.security.jacc</Export-Package>
+                        <Export-Package>
+                            javax.security.jacc;version="${spec.version}";uses:="javax.servlet.http"
+                        </Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
